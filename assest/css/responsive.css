@@ -1,0 +1,103 @@
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .aside {
+        left: -270px;
+    }
+
+    .main-content {
+        padding: 0;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .form-item>.btn {
+        display: block;
+        margin: auto;
+    }
+
+
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media screen and (max-width: 767.98px) {
+
+    .col-6,
+    .contact-info-item,
+    .portfolio-item,
+    .services-item,
+    .education,
+    .experience,
+    .portfolio-item,
+    .skills,
+    .personal-info {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media screen and (max-width: 991.98px) {
+
+
+
+    .home-info {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .home-img {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 60px;
+    }
+
+
+    .contact-info-item,
+    .services-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media screen and (max-width: 1199.98px) {
+    .section {
+        min-height: 0;
+    }
+
+    .aside {
+        left: -270px;
+    }
+
+    .main-content {
+        padding: 0;
+    }
+
+
+    .info-item p span {
+        display: block;
+        margin-left: 0;
+    }
+
+
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/* No media query since the extra-large breakpoint has no upper bound on its width */
