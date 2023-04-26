@@ -76,6 +76,10 @@
 
 /* // Large devices (desktops, 992px and up) */
 @media screen and (max-width: 1199.98px) {
+    .section .container {
+        padding-top: 70px;
+    }
+
     .section {
         min-height: 0;
     }
@@ -84,9 +88,24 @@
         left: -270px;
     }
 
-    .main-content {
-        padding: 0;
+    .nav-toggle {
+        display: flex;
+        left: 30px;
     }
+
+    .nav-toggle.open {
+        left: 300px;
+    }
+
+    .section {
+        left: 0;
+    }
+
+    .section.open {
+        left: 270px;
+    }
+
+
 
 
     .info-item p span {

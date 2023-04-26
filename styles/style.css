@@ -120,6 +120,35 @@ ul {
 	display: block;
 	padding: 0 30px;
 	opacity: 1;
+	position: fixed;
+	left: 270px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	overflow: auto;
+	overflow-x: hidden;
+	transition: all 0.3s ease;
+}
+
+.section.back-section {
+	z-index: 1;
+}
+
+.section.active {
+	z-index: 2;
+	opacity: 1;
+	animation: slideSection 1s ease;
+}
+
+@keyframes slideSection {
+	0% {
+		transform: translateX(100%);
+	}
+
+	100% {
+		transform: translateX(0%);
+	}
 }
 
 .hidden {
@@ -127,9 +156,6 @@ ul {
 }
 
 
-.main-content {
-	padding-left: 270px;
-}
 
 .padd-15 {
 	padding-left: 15px;
@@ -227,8 +253,13 @@ ul {
 	justify-content: center;
 	align-items: center;
 	z-index: 10;
+	transition: all 0.3s ease;
 
 
+}
+
+.aside.open {
+	left: 0;
 }
 
 .logo {
@@ -288,6 +319,7 @@ ul {
 	display: none;
 	align-items: center;
 	justify-content: center;
+	transition: all 0.3s ease;
 }
 
 .nav-toggle span {
@@ -297,6 +329,10 @@ ul {
 	display: inline-block;
 	position: relative;
 
+}
+
+.nav-toggle.open span {
+	background: transparent;
 }
 
 .nav-toggle span::before {
@@ -310,6 +346,11 @@ ul {
 
 }
 
+.nav-toggle.open span::before {
+	transform: rotate(45deg);
+	top: 0;
+}
+
 .nav-toggle span::after {
 	content: '';
 	height: 2px;
@@ -319,6 +360,11 @@ ul {
 	top: 6px;
 	left: 0;
 
+}
+
+.nav-toggle.open span::after {
+	transform: rotate(-45deg);
+	top: 0;
 }
 
 
@@ -494,7 +540,7 @@ ul {
 }
 
 .buttons .btn {
-	margin-right: 15px;
+
 	margin-top: 10px;
 }
 
@@ -789,6 +835,7 @@ ul {
 	max-width: 25%;
 	text-align: center;
 	margin-bottom: 60px;
+	text-transform: none;
 }
 
 .contact-info-item>.icon {
