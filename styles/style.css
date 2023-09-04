@@ -1,0 +1,1038 @@
+/*	==========================================================
+	-------------------->>> CSS Styles <<<--------------------
+	==========================================================
+/*	==========================================================
+	*	Template Name: Akash Khan - Portfolio
+	* 	Template URL: 
+	*	Template Descriptions: This my portfolio template . 
+		---------------------
+	
+	*	About Author
+		------------
+		Author Name: Akash Khan
+		Author URL: http://akashkhan.com
+		Support: akashcc48@gmail.com
+	*	Get In Touch
+		------------
+		GitHub: https://github.com/akash-khan-311
+		Facebook: https://www.facebook.com/iyaRahmanirRahim
+		
+		Telegram: https://t.me/AKASHALIBD24
+	
+	*	Version Update
+		--------------
+		Version: 1.0
+	
+/*	=========================================================
+/* ==========================================================
+	Table of Content
+	----------------
+	00. Import Required Files
+	01. Root - Custom Properties
+	02. Utilities
+	03. Common Class Styles
+	04. Aside Styles
+		a. Logo Styles
+		b. Nav Toggle Styles
+		c. Navigation Styles
+	05. Home Page Styles
+	06. About Page Styles
+	07. Services Page Styles
+	08. Portfolio Pages Styles
+	09. Contact Pages Styles
+	
+ ==========================================================
+/* ----------------------------------
+		00. Import Required Files		
+---------------------------------- */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+
+/* --→ Animation ←-- */
+
+
+@keyframes slideSection {
+	0% {
+		transform: translateX(100%);
+	}
+
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+
+/* ----------------------------------
+		01. Root - Custom Properties		
+---------------------------------- */
+
+:root {
+	/* --→ Colors ←-- */
+	--bg-black-900: #f2f2fc;
+	--bg-black-100: #fdf9ff;
+	--bg-black-50: #e8dfec;
+	--text-black-900: #302e4d;
+	--text-black-700: #504e70;
+	--p-font: 'Poppins', sans-serif;
+	--style-font: 'Clicker Script', cursive;
+
+}
+
+
+/* ----------------------------------
+		02. Utilities		
+---------------------------------- */
+body.dark {
+	--bg-black-900: #151515;
+	--bg-black-100: #222222;
+	--bg-black-50: #393939;
+	--text-black-900: #ffffff;
+	--text-black-700: #e9e9e9;
+}
+
+body {
+	line-height: 1.5;
+	font-size: 16px;
+	font-family: var(--p-font);
+	text-transform: capitalize;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+ul {
+	list-style: none;
+
+}
+
+
+/* ----------------------------------
+		03. Common Class Styles	
+---------------------------------- */
+.main-container {
+	background: var(--bg-black-100);
+}
+
+.section {
+	background: var(--bg-black-900);
+	min-height: 100vh;
+	display: block;
+	padding: 0 30px;
+	opacity: 1;
+	position: fixed;
+	left: 270px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	overflow: auto;
+	overflow-x: hidden;
+	transition: all 0.3s ease;
+}
+
+.section.back-section {
+	z-index: 1;
+}
+
+.section.active {
+	z-index: 2;
+	opacity: 1;
+	animation: slideSection 1s ease;
+}
+
+
+.hidden {
+	display: none !important;
+}
+
+
+
+.padd-15 {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.container {
+	max-width: 1100px;
+	width: 100%;
+	margin: auto;
+}
+
+.section .container {
+	padding-top: 60px;
+	padding-bottom: 70px;
+
+}
+
+.section-title {
+	flex: 0 0 100%;
+	min-width: 100%;
+	margin-bottom: 60px;
+}
+
+.section-title h2 {
+	font-size: 40px;
+	color: var(--text-black-900);
+	font-weight: 700;
+	position: relative;
+
+}
+
+.section-title h2::before {
+	content: '';
+	height: 4px;
+	width: 50px;
+	background: var(--skin-color);
+	position: absolute;
+	top: 100%;
+	left: 0;
+}
+
+.section-title h2::after {
+	content: '';
+	height: 4px;
+	width: 25px;
+	background: var(--skin-color);
+	position: absolute;
+	top: 100%;
+	left: 0;
+	margin-top: 8px;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-right: -15px;
+	position: relative;
+}
+
+.btn {
+	display: inline-block;
+	white-space: nowrap;
+	font-size: 16px;
+	font-weight: 500;
+	padding: 12px 35px;
+	background: var(--skin-color);
+	color: white;
+	border: none;
+	border-radius: 40px;
+	transition: all 0.3s ease;
+
+}
+
+.btn:hover {
+	transform: scale(1.1);
+}
+
+.shadow-dark {
+	box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+
+/* 04. Aside Styles */
+.aside {
+	width: 270px;
+	background: var(--bg-black-100);
+	position: fixed;
+	left: 0;
+	top: 0;
+	padding: 30px;
+	height: 100%;
+	border-right: 1px solid var(--bg-black-50);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+	transition: all 0.3s ease;
+
+
+}
+
+.aside.open {
+	left: 0;
+}
+
+/* ==== a. Logo Styles ====*/
+.logo {
+	position: absolute;
+	top: 50px;
+	font-size: 30px;
+	text-transform: capitalize;
+}
+
+.logo a {
+	color: var(--text-black-900);
+	font-weight: 700;
+	padding: 15px 20px;
+	font-size: 30px;
+	letter-spacing: 5px;
+	position: relative;
+}
+
+.logo a span {
+	font-family: var(--style-font);
+	font-size: 40px;
+	font-weight: 700;
+}
+
+.logo a::before {
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border-bottom: 5px solid var(--skin-color);
+	border-left: 5px solid var(--skin-color);
+	bottom: 0;
+	left: 0;
+}
+
+.logo a::after {
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border-top: 5px solid var(--skin-color);
+	border-right: 5px solid var(--skin-color);
+	top: 0;
+	right: 0;
+}
+
+/* b. Nav Toggle Styles */
+
+.nav-toggle {
+	height: 40px;
+	width: 45px;
+	border: 1px solid --bg-black-50;
+	cursor: pointer;
+	position: fixed;
+	left: 300px;
+	top: 20px;
+	border-radius: 5px;
+	background: var(--bg-black-100);
+	display: none;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+}
+
+.nav-toggle span {
+	height: 2px;
+	width: 18px;
+	background: var(--skin-color);
+	display: inline-block;
+	position: relative;
+
+}
+
+.nav-toggle.open span {
+	background: transparent;
+}
+
+.nav-toggle span::before {
+	content: '';
+	height: 2px;
+	width: 18px;
+	background: var(--skin-color);
+	position: absolute;
+	top: -6px;
+	left: 0;
+
+}
+
+.nav-toggle.open span::before {
+	transform: rotate(45deg);
+	top: 0;
+}
+
+.nav-toggle span::after {
+	content: '';
+	height: 2px;
+	width: 18px;
+	background: var(--skin-color);
+	position: absolute;
+	top: 6px;
+	left: 0;
+
+}
+
+.nav-toggle.open span::after {
+	transform: rotate(-45deg);
+	top: 0;
+}
+
+/* c. Navigation Styles */
+.nav {
+	margin-top: 50px;
+
+}
+
+.nav li {
+	margin-bottom: 20px;
+	display: block;
+
+}
+
+.nav li a {
+	font-size: 16px;
+	font-weight: 600;
+	display: block;
+	border-bottom: 1px solid var(--bg-black-50);
+	color: var(--text-black-900);
+	padding: 5px 15px;
+}
+
+.nav li a.active {
+	color: var(--skin-color);
+}
+
+.nav li a i {
+	margin-right: 15px;
+}
+
+
+/* 05. Home Page Styles */
+.home {
+	min-height: 100vh;
+	display: flex;
+	color: var(--text-black-900);
+}
+
+.home-info {
+	flex: 0 0 60%;
+	max-width: 60%;
+}
+
+.hello {
+	font-size: 28px;
+	margin: 15px 0;
+}
+
+.hello span {
+	font-family: var(--style-font);
+	font-size: 40px;
+	color: var(--skin-color);
+}
+
+.my-profession {
+	font-size: 30px;
+	margin: 15px 0;
+}
+
+.typing {
+	color: var(--skin-color);
+}
+
+.home-info p {
+	margin-bottom: 70px;
+	font-size: 20px;
+	color: var(--text-black-700);
+}
+
+.home-img {
+	flex: 0 0 40%;
+	max-width: 40%;
+	text-align: center;
+	position: relative;
+
+}
+
+.home-img::after {
+	content: '';
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	right: 20px;
+	bottom: -40px;
+	border-bottom: 10px solid var(--skin-color);
+	border-right: 10px solid var(--skin-color);
+}
+
+.home-img::before {
+	content: '';
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	left: -20px;
+	top: -40px;
+	border-top: 10px solid var(--skin-color);
+	border-left: 10px solid var(--skin-color);
+}
+
+.home-img img {
+	height: 400px;
+	margin: auto;
+	border-radius: 5px;
+
+}
+
+/* 06. About Page Styles */
+.about-content {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+
+.about-text {
+	flex: 0 0 100%;
+	max-width: 100%;
+
+}
+
+.about-text h3 {
+	font-size: 24px;
+	margin-bottom: 15px;
+	font-weight: 700;
+	color: var(--text-black-900);
+
+
+
+}
+
+
+.about-text h3 span {
+	color: var(--skin-color);
+}
+
+.about-text p {
+	font-size: 16px;
+	line-height: 25px;
+	color: var(--text-black-700);
+
+}
+
+.personal-info {
+	flex: 0 0 60%;
+	max-width: 60%;
+	margin-top: 40px;
+
+}
+
+.info-item {
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+
+.info-item p {
+	color: var(--text-black-700);
+	font-weight: 600;
+	padding: 10px 0;
+	font-size: 16px;
+	border-bottom: 1px solid var(--bg-black-50);
+}
+
+.info-item p span {
+	text-transform: none;
+	font-weight: 400;
+	margin-left: 4px;
+	display: inline-block;
+}
+
+.buttons {
+	margin-top: 30px;
+
+}
+
+.buttons .btn {
+
+	margin-top: 10px;
+}
+
+.skills {
+	flex: 0 0 40%;
+	max-width: 40%;
+	margin-top: 40px;
+
+}
+
+.skill-item {
+	flex: 0 0 100%;
+	max-width: 100%;
+	margin-bottom: 25px;
+}
+
+.skill-item h5 {
+	line-height: 40px;
+	font-weight: 600;
+	font-size: 16px;
+	color: var(--text-black-900);
+	text-transform: capitalize;
+}
+
+.progress {
+	background: var(--bg-black-50);
+	height: 7px;
+	border-radius: 4px;
+	width: 100%;
+	position: relative;
+}
+
+
+.progress-in {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	border-radius: 4px;
+	background: var(--skin-color);
+}
+
+
+.skill-percent {
+	position: absolute;
+	top: -40px;
+	right: 0;
+	line-height: 40px;
+	font-weight: 400;
+	color: var(--text-black-700);
+}
+
+.education,
+.experience {
+	flex: 0 0 50%;
+	max-width: 50%;
+	margin-top: 30px;
+}
+
+.title {
+	font-size: 24px;
+	margin-bottom: 30px;
+	font-weight: 700;
+	color: var(--text-black-900);
+}
+
+
+.timeline-box {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+.timeline {
+	background: var(--bg-black-100);
+	padding: 30px 15px;
+	border: 1px solid var(--bg-black-50);
+	width: 100%;
+	position: relative;
+}
+
+.timeline-item {
+	position: relative;
+	padding-left: 37px;
+	padding-bottom: 50px;
+
+}
+
+.timeline-item:last-child {
+	padding-bottom: 0;
+}
+
+.timeline-item::before {
+	content: '';
+	width: 1px;
+	position: absolute;
+	height: 100%;
+	left: 7px;
+	top: 0;
+	background: var(--skin-color);
+}
+
+.circle-dot {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	background: var(--skin-color);
+}
+
+.timeline-date {
+	font-weight: 400;
+	font-size: 14px;
+	margin-bottom: 12px;
+	color: var(--text-black-700);
+}
+
+.timeline-date .fa {
+	margin-right: 5px;
+}
+
+.timeline-title {
+	font-weight: 700;
+	font-size: 18px;
+	margin-bottom: 15px;
+	text-transform: capitalize;
+	color: var(--text-black-900);
+}
+
+.timeline-text {
+	line-height: 25px;
+	font-size: 16px;
+	text-align: justify;
+	color: var(--text-black-700);
+}
+
+/* 07. Services Page Styles */
+.services .container {
+	padding: 100px 0;
+}
+
+.services-item {
+	margin-bottom: 30px;
+	flex: 0 0 33.33%;
+	max-width: 33.33%;
+
+}
+
+.services-item-inner {
+	background: var(--bg-black-100);
+	border: 1px solid var(--bg-black-50);
+
+	padding: 30px 15px;
+	text-align: center;
+	transition: all 0.3s ease;
+	position: relative;
+}
+
+.services-item-inner h4 {
+	color: var(--text-black-700);
+}
+
+.services-item-inner:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	right: -1px;
+	bottom: -1px;
+	border-top: 1px solid var(--skin-color);
+	border-bottom: 1px solid var(--skin-color);
+	transform: scale(0, 1);
+	transition: all 0.6s;
+}
+
+.services-item-inner:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	right: -1px;
+	bottom: -1px;
+	border-left: 1px solid var(--skin-color);
+	border-right: 1px solid var(--skin-color);
+	transform: scale(1, 0);
+	transition: all 0.6s;
+}
+
+.services-item-inner:hover:before,
+.services-item-inner:hover:after {
+	transform: scale(1);
+}
+
+.services-item-inner>.icon {
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	display: block;
+	margin: 0 auto 30px;
+	text-align: center;
+	transition: all 0.3s ease;
+}
+
+.services-item-inner>.icon>.fa {
+	font-size: 40px;
+	line-height: 60px;
+	color: var(--skin-color);
+	transition: all 0.3s ease;
+}
+
+.services-item-inner:hover .icon {
+	background: var(--skin-color);
+}
+
+.services-item-inner:hover .icon .fa {
+	font-size: 25px;
+	color: white;
+}
+
+.services-item-inner h4 {
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+
+/* 08. Portfolio Pages Styles */
+.portfolio>.container {
+	padding-bottom: 40px;
+}
+
+.portfolio-heading {
+	flex: 0 0 100%;
+	max-width: 100%;
+	margin-bottom: 40px;
+}
+
+.portfolio-heading h2 {
+	color: var(--text-black-900);
+	font-weight: 500;
+
+}
+
+.portfolio-item {
+	flex: 0 0 33.33%;
+	max-width: 33.33%;
+	margin-bottom: 30px;
+}
+
+.portfolio-item-inner {
+	border: 6px solid var(--bg-black-100);
+	border-radius: 10px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.portfolio-img img {
+	width: 100%;
+	display: block;
+	transition: all 0.3s ease;
+}
+
+.portfolio-img:hover img {
+	transform: scale(1.2);
+}
+
+.portfolio-item-inner .buttons {
+	display: block;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+
+/* 09. Contact Pages Styles */
+.contact-title {
+	color: var(--skin-color);
+	text-align: center;
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+.contact-sub-title {
+	color: var(--text-black-900);
+	text-align: center;
+	font-size: 15px;
+	margin-bottom: 60px;
+}
+
+.contact-info-item {
+	flex: 0 0 25%;
+	max-width: 25%;
+	text-align: center;
+	margin-bottom: 60px;
+	text-transform: none;
+}
+
+.contact-info-item>.icon {
+	display: block;
+}
+
+.contact-info-item>.icon>.fa {
+	font-size: 25px;
+	color: var(--skin-color);
+}
+
+.contact-info-item h4 {
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--text-black-900);
+	text-transform: capitalize;
+	margin: 15px 0 5px;
+}
+
+.contact-info-item p {
+	font-size: 16px;
+	line-height: 25px;
+	color: var(--text-black-700);
+	font-weight: 400;
+}
+
+.contact-form {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+.col-6 {
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+
+.col-12 {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+.form-item {
+	margin-bottom: 30px;
+
+}
+
+.form-control {
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	background: var(--bg-black-100);
+	border: 1px solid var(--bg-black-50);
+	padding: 10px 25px;
+	font-size: 16px;
+	color: var(--text-black-700);
+	transition: all 0.3s ease;
+}
+
+.form-control:focus {
+	box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+
+textarea.form-control {
+	height: 140px;
+}
+
+.form-item>.btn {
+	height: 40px;
+	padding: 0 50px;
+	cursor: pointer;
+}
+
+
+
+/*  Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+	.aside {
+		left: -270px;
+	}
+
+	.main-content {
+		padding: 0;
+	}
+
+	.row {
+		flex-direction: column;
+	}
+
+	.container {
+		padding: 0;
+	}
+
+	.col-6 {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	.form-item>.btn {
+		display: block;
+		margin: auto;
+	}
+
+
+}
+
+/*  Small devices (landscape phones, 576px and up) */
+@media screen and (max-width: 767.98px) {
+
+	.col-6,
+	.contact-info-item,
+	.portfolio-item,
+	.services-item,
+	.education,
+	.experience,
+	.portfolio-item,
+	.skills,
+	.personal-info {
+		flex: 0 0 100% !important;
+		max-width: 100% !important;
+	}
+
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (max-width: 991.98px) {
+
+
+
+	.home-info {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	.home-img {
+		flex: 0 0 100%;
+		max-width: 100%;
+		margin-top: 60px;
+	}
+
+
+	.contact-info-item,
+	.services-item {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+
+
+}
+
+/*  Large devices (desktops, 992px and up) */
+@media screen and (max-width: 1199.98px) {
+	.section .container {
+		padding-top: 70px;
+	}
+
+	.section {
+		min-height: 0;
+	}
+
+	.aside {
+		left: -270px;
+	}
+
+	.nav-toggle {
+		display: flex;
+		left: 30px;
+	}
+
+	.nav-toggle.open {
+		left: 300px;
+	}
+
+	.section {
+		left: 0;
+	}
+
+	.section.open {
+		left: 270px;
+	}
+
+
+
+
+	.info-item p span {
+		display: block;
+		margin-left: 0;
+	}
+
+
+}
+
+
+
+/* No media query since the extra-large breakpoint has no upper bound on its width */
